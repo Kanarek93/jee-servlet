@@ -1,4 +1,4 @@
-package homework;
+package homework.day3;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 @WebServlet(name = "Servlet32", value = "/servlet32")
 public class Servlet32 extends HttpServlet {
 
-    private static final String ERROR_MESSAGE = "Wprowadzona dana niepoprawna";
+    private static final String ERROR_MESSAGE = "Wprowadzono niepoprawną daną";
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -28,17 +28,20 @@ public class Servlet32 extends HttpServlet {
 
         String valS = request.getParameter("binary");
         int result = 0;
-        //Nie sprawdzam czy wprowadzona dana nie jest pusta, bo regex to wyklucza
-        Matcher matcher = compiledPattern.matcher(valS);
-        if (matcher.matches()){
-            char[] numbers = valS.toCharArray();
-            System.out.println("długość tablicy " + numbers.length);
-            for (int j =0, i = numbers.length-1; i >= 0; i--, j++){
-                result += Integer.parseInt((numbers[i]+""))*Math.pow(2,j);
+        if (valS != null) {
+            //Nie sprawdzam czy wprowadzona dana nie jest pusta, bo regex to wyklucza
+            Matcher matcher = compiledPattern.matcher(valS);
+            if (matcher.matches()) {
+                char[] numbers = valS.toCharArray();
+                System.out.println("długość tablicy " + numbers.length);
+                for (int j = 0, i = numbers.length - 1; i >= 0; i--, j++) {
+                    result += Integer.parseInt((numbers[i] + "")) * Math.pow(2, j);
+                }
+                writer.append(valS + " = " + result);
+            } else {
+                writer.append(ERROR_MESSAGE);
             }
-            writer.append(valS + " = " + result);
-        }
-        else {
+        } else {
             writer.append(ERROR_MESSAGE);
         }
 

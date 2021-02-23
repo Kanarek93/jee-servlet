@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator walut</title>
+</head>
+<body>
+        <form action="/servlet31" method="get">
+            <label>Kwota: <input type="text" name="howmuch"></label> <br>
+            Waluta: <br>
+            <input type="radio" name="currency" value="0" checked>EUR -> USD  <br>
+            <input type="radio" name="currency" value="1">USD -> EUR  <br>
+            <input type="radio" name="currency" value="2">EUR -> PLN  <br>
+            <input type="radio" name="currency" value="3">PLN -> EUR  <br>
+            <input type="radio" name="currency" value="4">USD -> PLN  <br>
+            <input type="radio" name="currency" value="5">PLN -> USD  <br>
+            <input type="submit" value="Przelicz">
+        </form>
+</body>
+</html>

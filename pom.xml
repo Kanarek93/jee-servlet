@@ -14,16 +14,30 @@
         <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
     <dependencies>
+        <!-- Do używania servletów-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
+        <!-- funckje używane w plikach jstl -->
         <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <!-- Nie wiem po co to -->
+        <!--dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
             <version>2.14.0</version>
+        </dependency-->
+        <!-- Baza danych !-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.21</version>
         </dependency>
     </dependencies>
 

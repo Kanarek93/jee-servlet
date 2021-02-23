@@ -1,4 +1,4 @@
-package homework;
+package homework.day3;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
